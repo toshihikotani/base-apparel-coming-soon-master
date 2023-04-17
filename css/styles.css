@@ -7,10 +7,57 @@ html, body {
 body {
   box-sizing: content-box;
   height: 100vh;
+  width: 375px;
+  margin: auto;
   font-size: 16px;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
+  grid-template-rows: auto auto 415px;
+  grid-template-areas: "header-content" "image-content" "main-content";
+}
+
+/* HEADER */
+header {
+  grid-area: header-content;
+  padding: 30px;
+}
+header img {
+  width: 32%;
+}
+
+/* IMAGE CONTENT */
+.image-content {
+  grid-area: image-content;
+}
+
+/* MAIN */
+main {
+  grid-area: main-content;
+}
+main .apparel-content-section {
+  padding: 0px 30px;
+}
+main .apparel-content-section .coming-soon-header {
+  margin: 12px 0px;
+  font-family: "JosefinSans-Light";
+  font-size: 2.55rem;
+  color: hsl(0deg, 36%, 70%);
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 10px;
+}
+main .apparel-content-section .coming-soon-header b {
+  font-family: "JosefinSans-SemiBold";
+  color: hsl(0deg, 6%, 24%);
+}
+main .apparel-content-section .apparel-paragraph {
+  margin: 2px 0px;
+  font-family: "JosefinSans-Regular";
+  font-size: 0.9rem;
+  color: hsl(0deg, 36%, 70%);
+  text-align: center;
+  line-height: 24px;
 }
 
 /*# sourceMappingURL=styles.css.map */

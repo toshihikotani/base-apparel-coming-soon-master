@@ -22,8 +22,63 @@ html, body {
 body {
     box-sizing: content-box;
     height: 100vh;
+    width: 375px;
+    margin: auto;
     font-size: 16px;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
+    grid-template-rows: auto auto 415px;
+    grid-template-areas: 
+    'header-content'
+    'image-content'
+    'main-content';
+}
+
+/* HEADER */
+header {
+    grid-area: header-content;
+    padding: 30px;
+    
+    img {
+        width: 32%;
+    }
+}
+
+/* IMAGE CONTENT */
+.image-content {
+    grid-area: image-content;
+}
+
+/* MAIN */
+main {
+    grid-area: main-content;
+
+    .apparel-content-section {
+        padding: 0px 30px;
+
+        .coming-soon-header {
+            margin: 12px 0px;
+            font-family: 'JosefinSans-Light';
+            font-size: 2.55rem;
+            color: $desaturatedRed;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 10px;
+
+            b {
+                font-family: 'JosefinSans-SemiBold';
+                color: $darkGrayishRed;
+            }
+        }
+
+        .apparel-paragraph {
+            margin: 2px 0px;
+            font-family: 'JosefinSans-Regular';
+            font-size: 0.90rem;
+            color: $desaturatedRed;
+            text-align: center;
+            line-height: 24px;
+        }
+    }
 }
