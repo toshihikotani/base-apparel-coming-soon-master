@@ -11,18 +11,19 @@ $darkGrayishRed: hsl(0, 6%, 24%);
 
 // MIXINS
 @mixin linearGradient($colorOne, $colorTwo){
-    background-color: linear-gradient(135deg, $colorOne, $colorTwo);
+    background: linear-gradient(135deg, $colorOne, $colorTwo);
 }
 
 /* COMMON */
 html, body {
-    max-width:100vw;
+    max-width: 100vw;
 }
 
 body {
     box-sizing: content-box;
     height: 100vh;
     width: 375px;
+    @include linearGradient(hsl(0, 0%, 100%), hsl(0, 100%, 98%));
     margin: auto;
     font-size: 16px;
     display: grid;
@@ -33,6 +34,10 @@ body {
     'header-content'
     'image-content'
     'main-content';
+}
+
+::placeholder {
+    color: $desaturatedRed;
 }
 
 /* HEADER */
@@ -48,6 +53,7 @@ header {
 /* IMAGE CONTENT */
 .image-content {
     grid-area: image-content;
+    margin-bottom: 25px;
 }
 
 /* MAIN */
@@ -57,8 +63,9 @@ main {
     .apparel-content-section {
         padding: 0px 30px;
 
+        /* COMING SOON HEADER */
         .coming-soon-header {
-            margin: 12px 0px;
+            margin: 5px 0px;
             font-family: 'JosefinSans-Light';
             font-size: 2.55rem;
             color: $desaturatedRed;
@@ -72,13 +79,52 @@ main {
             }
         }
 
+
+        /* APPAREL PARAGRAPH */
         .apparel-paragraph {
-            margin: 2px 0px;
+            margin: 15px 0px 30px;
             font-family: 'JosefinSans-Regular';
             font-size: 0.90rem;
             color: $desaturatedRed;
             text-align: center;
-            line-height: 24px;
+            line-height: 22px;
+        }
+
+        /* INPUT FIELD */
+        .input-field {
+            position: relative;
+            width: 260px;
+            height: 50px;
+
+            .email-input-field {
+                position: absolute;
+                z-index: 0;
+                width: 100%;
+                height: 24px;
+                padding: 12px 25px;
+                border: 1px solid $desaturatedRed;
+                border-radius: 25px;
+                font-family: 'JosefinSans-Light';
+            }
+
+            .submit-button {
+                position: absolute;
+                z-index: 1;
+                left: 95%;
+                width: 65px;
+                height: 50px;
+                border: 0px solid $darkGrayishRed;
+                border-radius: 50px;
+                @include linearGradient(hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+            }
+        }
+
+         /* ERROR MESSAGE */
+        .error-message {
+            margin-left: 24px;
+            font-family: 'JosefinSans-Regular';
+            font-size: 0.65em;
+            color: $softRed;
         }
     }
 }

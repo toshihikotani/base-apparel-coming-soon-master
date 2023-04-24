@@ -34,11 +34,18 @@
       <p class="apparel-paragraph">Hello fellow shoppers! We're currently building our new fashion store. 
       Add your email below to stay up-to-date with announcements and our launch deals.</p>
   
-      <input class="email-input-field" type="text" placeholder="Email Address" aria-placeholder="Email Address">
-      <button class="submit-button"></button>
+      <div class="input-field">
+        <!--EMAIL INPUT FIELD-->
+        <input class="email-input-field" type="text" placeholder="Email Address" aria-placeholder="Email Address">
+        <!--SUBMIT BUTTON-->
+        <button class="submit-button" aria-label="Submit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20"><path fill="none" stroke="#FFF" stroke-width="2" d="M1 1l8.836 8.836L1 18.671"/></svg>
+        </button>
+
+      </div>
 
       <!--ERROR MESSAGE-->
-      <p class="error-message">Please provide a valid email</p>
+      <p id="error" class="error-message">Please provide a valid email</p>
 
     </section>
     
