@@ -53,7 +53,7 @@ header {
 /* IMAGE CONTENT */
 .image-content {
     grid-area: image-content;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 /* MAIN */
@@ -82,7 +82,7 @@ main {
 
         /* APPAREL PARAGRAPH */
         .apparel-paragraph {
-            margin: 15px 0px 30px;
+            margin: 16px 0px 30px;
             font-family: 'JosefinSans-Regular';
             font-size: 0.90rem;
             color: $desaturatedRed;
@@ -95,33 +95,55 @@ main {
             position: relative;
             width: 260px;
             height: 50px;
+            margin-bottom: 6px;
 
             .email-input-field {
                 position: absolute;
                 z-index: 0;
                 width: 100%;
                 height: 24px;
-                padding: 12px 25px;
+                padding: 12px 22px;
                 border: 1px solid $desaturatedRed;
                 border-radius: 25px;
                 font-family: 'JosefinSans-Light';
+                font-size: 0.90em;
             }
 
+            .invalid-email {
+                border: 2px solid $softRed !important;
+            }
+
+            /* ERROR ICON */
+            .error-icon {
+                display: none;
+                position: absolute;
+                z-index: 1;
+                top: 25%;
+                left: 80%;
+            }
+
+            /* SUBMIT BUTTON */
             .submit-button {
                 position: absolute;
                 z-index: 1;
                 left: 95%;
-                width: 65px;
+                width: 64px;
                 height: 50px;
                 border: 0px solid $darkGrayishRed;
                 border-radius: 50px;
                 @include linearGradient(hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+                &:hover {
+                    box-shadow: 1px 5px 10px hsl(0, 74%, 74%);
+                    @include linearGradient(hsl(0, 100%, 98%), hsl(0, 74%, 74%));
+                }
             }
         }
 
          /* ERROR MESSAGE */
         .error-message {
-            margin-left: 24px;
+            margin: 0px 0px 0px 24px;
+            display: none;
             font-family: 'JosefinSans-Regular';
             font-size: 0.65em;
             color: $softRed;
