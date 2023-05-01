@@ -54,6 +54,10 @@ header {
 .image-content {
     grid-area: image-content;
     margin-bottom: 10px;
+
+    .desktop-hero-image{
+        display: none;
+    }
 }
 
 /* MAIN */
@@ -150,3 +154,120 @@ main {
         }
     }
 }
+
+// PORTRAIT TABLET
+@media only screen and (min-width:600px){
+
+}
+
+// LANDSCAPE TABLET
+@media only screen and (min-width:768px){
+    
+}
+
+// LARGE LAPTOP/DESKTOP
+@media only screen and (min-width:992px){
+    
+}
+
+// LARGE LAPTOP/DESKTOP
+@media only screen and (min-width:1200px){
+
+    body {
+        background: url('../images/bg-pattern-desktop.svg') 10% top no-repeat, linear-gradient(135deg,hsl(0, 0%, 100%), hsl(0, 100%, 98%)) ;
+        grid-template-rows: 160px 540px;
+        grid-template-columns: 830px 610px;
+        grid-template-areas: 
+        'header-content image-content'
+        'main-content image-content';
+    }
+
+    /* HEADER */
+    header {
+        margin-top: 0px;
+        padding: 0px 160px;
+        
+        img {
+            width: 32.75%;
+        }
+    }
+
+    /* IMAGE CONTENT */
+    .image-content {
+
+        .mobile-hero-image {
+            display: none;
+        }
+
+        .desktop-hero-image {
+            margin-top: 100px;
+            display: block;
+        }
+    }
+
+    /* MAIN */
+    main {
+
+        .apparel-content-section {
+            padding: 0px 165px;
+
+            /* COMING SOON HEADER */
+            .coming-soon-header {
+                font-size: 4.25rem;
+                text-align: left;
+                letter-spacing: 14px;
+            }
+
+            /* APPAREL PARAGRAPH */
+            .apparel-paragraph {
+                width: 90%;
+                font-size: 1rem;
+                text-align: left;
+                line-height: 30px;
+            }
+
+            /* INPUT FIELD */
+            .input-field {
+                width: 385px;
+                height: 50px;
+                margin-bottom: 6px;
+
+                .email-input-field {
+                    width: 100%;
+                    height: 20px;
+                    padding: 18px 30px;
+                    font-size: 0.95em;
+                }
+
+                .invalid-email {
+                    border: 2px solid $softRed !important;
+                }
+
+                /* ERROR ICON */
+                .error-icon {
+                    display: none;
+                    top: 25%;
+                    left: 80%;
+                }
+
+                /* SUBMIT BUTTON */
+                .submit-button {
+                    left: 90%;
+                    width: 100px;
+                    height: 60px;
+                }
+            }
+
+            /* ERROR MESSAGE */
+            .error-message {
+                margin: 0px 0px 0px 24px;
+                display: none;
+                font-family: 'JosefinSans-Regular';
+                font-size: 0.65em;
+                color: $softRed;
+            }
+        }
+    }
+    
+}
+
