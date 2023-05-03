@@ -14,6 +14,19 @@ $darkGrayishRed: hsl(0, 6%, 24%);
     background: linear-gradient(135deg, $colorOne, $colorTwo);
 }
 
+@mixin fontStyleSet($fontFamily, $fontSize:16px, $color){
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    color: $color;
+}
+
+@mixin borderSizeAndRadiusSet($width, $height, $border, $borderRadius){
+    width: $width;
+    height: $height;
+    border: $border;
+    border-radius: $borderRadius;
+}
+
 /* COMMON */
 html, body {
     max-width: 100vw;
@@ -70,26 +83,21 @@ main {
         /* COMING SOON HEADER */
         .coming-soon-header {
             margin: 5px 0px;
-            font-family: 'JosefinSans-Light';
-            font-size: 2.55rem;
-            color: $desaturatedRed;
+            @include fontStyleSet('JosefinSans-Light', 2.55rem, $desaturatedRed);
             text-transform: uppercase;
             text-align: center;
             letter-spacing: 10px;
 
-            b {
+            b {          
                 font-family: 'JosefinSans-SemiBold';
                 color: $darkGrayishRed;
             }
         }
 
-
         /* APPAREL PARAGRAPH */
         .apparel-paragraph {
             margin: 16px 0px 30px;
-            font-family: 'JosefinSans-Regular';
-            font-size: 0.90rem;
-            color: $desaturatedRed;
+            @include fontStyleSet('JosefinSans-Regular', 0.90rem, $desaturatedRed);
             text-align: center;
             line-height: 22px;
         }
@@ -104,11 +112,8 @@ main {
             .email-input-field {
                 position: absolute;
                 z-index: 0;
-                width: 100%;
-                height: 24px;
                 padding: 12px 22px;
-                border: 1px solid $desaturatedRed;
-                border-radius: 25px;
+                @include borderSizeAndRadiusSet(100%, 24px, 1px solid $desaturatedRed, 25px);
                 font-family: 'JosefinSans-Light';
                 font-size: 0.90em;
             }
@@ -131,10 +136,7 @@ main {
                 position: absolute;
                 z-index: 1;
                 left: 95%;
-                width: 64px;
-                height: 50px;
-                border: 0px solid $darkGrayishRed;
-                border-radius: 50px;
+                @include borderSizeAndRadiusSet(64px, 50px, 0px solid $darkGrayishRed, 50px);
                 @include linearGradient(hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 
                 &:hover {
@@ -148,9 +150,7 @@ main {
         .error-message {
             margin: 0px 0px 0px 24px;
             display: none;
-            font-family: 'JosefinSans-Regular';
-            font-size: 0.65em;
-            color: $softRed;
+            @include fontStyleSet('JosefinSans-Regular', 0.65rem, $softRed);
         }
     }
 }
@@ -175,7 +175,7 @@ main {
 
     body {
         background: url('../images/bg-pattern-desktop.svg') 10% top no-repeat, linear-gradient(135deg,hsl(0, 0%, 100%), hsl(0, 100%, 98%)) ;
-        grid-template-rows: 160px 540px;
+        grid-template-rows: 160px 560px;
         grid-template-columns: 830px 610px;
         grid-template-areas: 
         'header-content image-content'
@@ -200,7 +200,7 @@ main {
         }
 
         .desktop-hero-image {
-            margin-top: 100px;
+            margin-top: 95px;
             display: block;
         }
     }
@@ -213,7 +213,7 @@ main {
 
             /* COMING SOON HEADER */
             .coming-soon-header {
-                font-size: 4.25rem;
+                @include fontStyleSet('JosefinSans-Light', 4.25rem, $desaturatedRed);
                 text-align: left;
                 letter-spacing: 14px;
             }
@@ -221,7 +221,7 @@ main {
             /* APPAREL PARAGRAPH */
             .apparel-paragraph {
                 width: 90%;
-                font-size: 1rem;
+                @include fontStyleSet('JosefinSans-Regular', 1rem, $desaturatedRed);
                 text-align: left;
                 line-height: 30px;
             }
@@ -229,45 +229,28 @@ main {
             /* INPUT FIELD */
             .input-field {
                 width: 385px;
-                height: 50px;
-                margin-bottom: 6px;
+                margin-bottom: 16px;
 
                 .email-input-field {
-                    width: 100%;
-                    height: 20px;
+                    @include borderSizeAndRadiusSet(100%, 20px, 1px solid $desaturatedRed, 25px);
                     padding: 18px 30px;
                     font-size: 0.95em;
-                }
-
-                .invalid-email {
-                    border: 2px solid $softRed !important;
-                }
-
-                /* ERROR ICON */
-                .error-icon {
-                    display: none;
-                    top: 25%;
-                    left: 80%;
                 }
 
                 /* SUBMIT BUTTON */
                 .submit-button {
                     left: 90%;
-                    width: 100px;
-                    height: 60px;
+                    @include borderSizeAndRadiusSet(100px, 60px, 0px solid $darkGrayishRed, 50px);
                 }
             }
 
             /* ERROR MESSAGE */
             .error-message {
-                margin: 0px 0px 0px 24px;
+                margin: 0px 0px 0px 30px;
                 display: none;
-                font-family: 'JosefinSans-Regular';
-                font-size: 0.65em;
-                color: $softRed;
+                @include fontStyleSet('JosefinSans-Regular', 0.85rem, $softRed);
             }
         }
     }
-    
 }
 
