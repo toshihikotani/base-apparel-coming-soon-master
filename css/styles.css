@@ -14,7 +14,7 @@ body {
   display: grid;
   justify-content: center;
   align-items: center;
-  grid-template-rows: auto auto 415px;
+  grid-template-rows: 80px 250px 450px;
   grid-template-areas: "header-content" "image-content" "main-content";
 }
 
