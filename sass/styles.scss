@@ -152,6 +152,10 @@ main {
             display: none;
             @include fontStyleSet('JosefinSans-Regular', 0.65rem, $softRed);
         }
+
+        .show-error {
+            display: block !important;
+        }
     }
 }
 

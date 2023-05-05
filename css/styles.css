@@ -122,6 +122,9 @@ main .apparel-content-section .error-message {
   font-size: 0.65rem;
   color: hsl(0deg, 93%, 68%);
 }
+main .apparel-content-section .show-error {
+  display: block !important;
+}
 
 @media only screen and (min-width: 1200px) {
   body {
